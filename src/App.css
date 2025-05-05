@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+    width: 2rem;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side,#590661 90%,#00000000);
+    background: 
+      var(--_g) 0%   50%,
+      var(--_g) 50%  50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100%/3) 50%;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {
+      20%{background-position:0%   0%, 50%  50%,100%  50%}
+      40%{background-position:0% 100%, 50%   0%,100%  50%}
+      60%{background-position:0%  50%, 50% 100%,100%   0%}
+      80%{background-position:0%  50%, 50%  50%,100% 100%}
+  } */
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 25px;
+  aspect-ratio: 1;
+  color: #6b1cc5;
+  border: 1.5px solid;
+  display: grid;
+  box-sizing: border-box;
+  animation: l1 4s infinite linear;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  margin: auto;
+  width: 70.7%;
+  aspect-ratio: 1;
+  border: 1.5px solid;
+  box-sizing: content-box;
+  animation: inherit;
+}
+.loader::after {
+  width: 50%;
+  aspect-ratio: 1;
+  border: 1.5px solid;
+  animation-duration: 2s;
+}
+@keyframes l1{
+  100% {transform:rotate(1turn)}
+}
+
+
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+ .teamscroller::-webkit-scrollbar {
+    display: none;
+  }
