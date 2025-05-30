@@ -12,7 +12,7 @@ const ProjectView = () => {
   const [filter, setFilter] = useState("");
   const [show, setShow] = useState(null);
   const [loading, setLoading] = useState(false);
-  const { user, authError } = useUserLoginContext();
+  const { user } = useUserLoginContext();
   const navigate = useNavigate();
 
   const getAllProjects = async () => {

@@ -3,7 +3,7 @@ import { getTasksByOwner } from "../../services/tasksAPI";
 import { generateDueDate } from "../../utils/generateDueDate";
 import CreateTask from "./CreateTask";
 import { colorMap, tags } from "../../utils/getTagData";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserLoginContext } from "../../context/userLoginContext";
 
 const MyTasks = () => {
@@ -12,7 +12,9 @@ const MyTasks = () => {
   const [filter, setFilter] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { user, authError } = useUserLoginContext();
+  const navigate = useNavigate();
+
+  const { user } = useUserLoginContext();
 
   const [showTaskModal, setTaskModal] = useState(false);
 

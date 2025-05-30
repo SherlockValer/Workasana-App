@@ -8,7 +8,7 @@ import { useUserLoginContext } from "../context/userLoginContext";
 const Team = () => {
   const navigate = useNavigate();
 
-  const { user, authError } = useUserLoginContext();
+  const { user } = useUserLoginContext();
 
   const [showTeamModal, setTeamModal] = useState(false);
 

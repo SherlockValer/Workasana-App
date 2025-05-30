@@ -8,7 +8,7 @@ import { useUserLoginContext } from "../../context/userLoginContext";
 
 const Sidebar = () => {
   const location = useLocation();
-  const { user, authError } = useUserLoginContext();
+  const { user } = useUserLoginContext();
 
   return (
     <div className="min-w-48 min-h-screen bg-violet-100 ">
