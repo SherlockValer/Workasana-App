@@ -1,6 +1,4 @@
 import { FaCaretDown } from "react-icons/fa";
-// import { useEffect, useState } from "react";
-// import { getProjectsOnly } from "../../services/projectsAPI";
 
 const ProjectSelect = ({
   projectList,
@@ -8,27 +6,6 @@ const ProjectSelect = ({
   project,
   setProject,
 }) => {
-  // const [projectList, setList] = useState([]);
-  // const [loading, setLoading] = useState(false);
-
-  // const getProjectsWithoutData = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await getProjectsOnly();
-  //     if (response.status === 200) {
-  //       setList(response.data.projects);
-  //     }
-  //   } catch (error) {
-  //     console.log(error.response.data);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getProjectsWithoutData();
-  // }, []);
-
   return (
     <div className="col-span-2">
       <label

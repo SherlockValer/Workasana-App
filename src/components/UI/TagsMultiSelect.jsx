@@ -1,29 +1,10 @@
 import { useState } from "react";
-// import { getTags } from "../../services/tagsAPI";
 import { FaCaretDown } from "react-icons/fa";
 import { BsX } from "react-icons/bs";
 import { tags, colorMap } from "../../utils/getTagData";
 
 const TagsMultiSelect = ({ tagList, selectedTags, selectTags }) => {
-  // const [tagList, setTagList] = useState([]);
-
   const [isOpen, setOpen] = useState(false);
-
-  // const getTagsList = async () => {
-  //   try {
-  //     const response = await getTags();
-  //     if (response.status === 200) {
-  //       console.log(response.data);
-  //       setTagList(response.data.data.tags);
-  //     }
-  //   } catch (error) {
-  //     console.log(error.response.data);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getTagsList();
-  // }, []);
 
   const handleTagCheckbox = (e) => {
     const { checked, value } = e.target;

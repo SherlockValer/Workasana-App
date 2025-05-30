@@ -1,28 +1,9 @@
 import { useState } from "react";
-// import { getUsers } from "../../services/usersAPI";
 import { FaCaretDown } from "react-icons/fa";
 import { BsX } from "react-icons/bs";
 
 const OwnersMultiSelect = ({ userList, selectedUsers, selectUsers }) => {
-  // const [userList, setList] = useState([]);
-
   const [isOpen, setOpen] = useState(false);
-
-  // const getUserList = async () => {
-  //   try {
-  //     const response = await getUsers();
-  //     if (response.status === 200) {
-  //       setList(response.data.users);
-  //       console.log(selectedUsers);
-  //     }
-  //   } catch (error) {
-  //     console.log(error.response.data);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getUserList();
-  // }, []);
 
   const handleUserCheckbox = (e) => {
     const { checked, value } = e.target;

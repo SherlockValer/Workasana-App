@@ -1,25 +1,6 @@
-// import { useState, useEffect } from "react";
 import { FaCaretDown } from "react-icons/fa";
-// import { getTeams } from "../../services/teamAPI";
 
 const TeamSelect = ({ teamList, team, selectTeam }) => {
-  // const [teamList, setTeamList] = useState([]);
-
-  // const getAllTeams = async () => {
-  //   try {
-  //     const response = await getTeams();
-  //     if (response.status === 200) {
-  //       setTeamList(response.data.teams);
-  //     }
-  //   } catch (error) {
-  //     console.log(error.response.data);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getAllTeams();
-  // }, []);
-
   return (
     <div className="col-span-2">
       <label
