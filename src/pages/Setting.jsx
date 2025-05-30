@@ -5,7 +5,7 @@ import { useUserLoginContext } from "../context/userLoginContext";
 const Setting = () => {
   const navigate = useNavigate();
 
-  const { user, authError } = useUserLoginContext();
+  const { user } = useUserLoginContext();
 
   const handleLogout = () => {
     localStorage.clear();

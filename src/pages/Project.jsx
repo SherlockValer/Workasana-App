@@ -9,7 +9,7 @@ import { useUserLoginContext } from "../context/userLoginContext";
 const Project = () => {
   const navigate = useNavigate();
 
-  const { user, authError } = useUserLoginContext();
+  const { user } = useUserLoginContext();
 
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
