@@ -1,30 +1,29 @@
-import { useEffect, useState } from "react";
-import { getTags } from "../../services/tagsAPI";
+import { useState } from "react";
+// import { getTags } from "../../services/tagsAPI";
 import { FaCaretDown } from "react-icons/fa";
 import { BsX } from "react-icons/bs";
-import React from "react";
 import { tags, colorMap } from "../../utils/getTagData";
 
-const TagsMultiSelect = ({ selectedTags, selectTags }) => {
-  const [tagList, setTagList] = useState([]);
+const TagsMultiSelect = ({ tagList, selectedTags, selectTags }) => {
+  // const [tagList, setTagList] = useState([]);
 
   const [isOpen, setOpen] = useState(false);
 
-  const getTagsList = async () => {
-    try {
-      const response = await getTags();
-      if (response.status === 200) {
-        console.log(response.data);
-        setTagList(response.data.data.tags);
-      }
-    } catch (error) {
-      console.log(error.response.data);
-    }
-  };
+  // const getTagsList = async () => {
+  //   try {
+  //     const response = await getTags();
+  //     if (response.status === 200) {
+  //       console.log(response.data);
+  //       setTagList(response.data.data.tags);
+  //     }
+  //   } catch (error) {
+  //     console.log(error.response.data);
+  //   }
+  // };
 
-  useEffect(() => {
-    getTagsList();
-  }, []);
+  // useEffect(() => {
+  //   getTagsList();
+  // }, []);
 
   const handleTagCheckbox = (e) => {
     const { checked, value } = e.target;
@@ -53,8 +52,8 @@ const TagsMultiSelect = ({ selectedTags, selectTags }) => {
           className="h-auto flex justify-between align-middle bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-sm p-2.5 cursor-pointer"
         >
           <div className="flex flex-wrap gap-1">
-            {selectedTags.length !== 0
-              ? selectedTags.map((tag) => {
+            {selectedTags?.length !== 0
+              ? selectedTags?.map((tag) => {
                   const tagData = tags.find((t) => t.name === tag);
                   const className =
                     colorMap[tagData.color] || "bg-gray-500 text-white";
@@ -79,8 +78,8 @@ const TagsMultiSelect = ({ selectedTags, selectTags }) => {
         <div className="w-full relative">
           {isOpen && (
             <div className="absolute top-2 z-10 left-0 grid grid-cols-3 gap-y-2 justify-items-center bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-sm w-full p-2.5">
-              {tagList.length !== 0 &&
-                tagList.map((tag) => (
+              {tagList?.length !== 0 &&
+                tagList?.map((tag) => (
                   <label
                     key={tag._id}
                     htmlFor={tag.name}

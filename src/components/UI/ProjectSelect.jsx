@@ -1,24 +1,33 @@
 import { FaCaretDown } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { getProjectsOnly } from "../../services/projectsAPI";
+// import { useEffect, useState } from "react";
+// import { getProjectsOnly } from "../../services/projectsAPI";
 
-const ProjectSelect = ({ currentProject, project, setProject }) => {
-  const [projectList, setList] = useState([]);
+const ProjectSelect = ({
+  projectList,
+  currentProject,
+  project,
+  setProject,
+}) => {
+  // const [projectList, setList] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
-  const getProjectsWithoutData = async () => {
-    try {
-      const response = await getProjectsOnly();
-      if (response.status === 200) {
-        setList(response.data.projects);
-      }
-    } catch (error) {
-      console.log(error.response.data);
-    }
-  };
+  // const getProjectsWithoutData = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const response = await getProjectsOnly();
+  //     if (response.status === 200) {
+  //       setList(response.data.projects);
+  //     }
+  //   } catch (error) {
+  //     console.log(error.response.data);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    getProjectsWithoutData();
-  }, []);
+  // useEffect(() => {
+  //   getProjectsWithoutData();
+  // }, []);
 
   return (
     <div className="col-span-2">
@@ -41,7 +50,7 @@ const ProjectSelect = ({ currentProject, project, setProject }) => {
           {currentProject ? (
             <option value={currentProject._id}>{currentProject.name}</option>
           ) : (
-            projectList.map((proj) => (
+            projectList?.map((proj) => (
               <option key={proj._id} value={proj._id}>
                 {proj.name}
               </option>

@@ -1,24 +1,24 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { FaCaretDown } from "react-icons/fa";
-import { getTeams } from "../../services/teamAPI";
+// import { getTeams } from "../../services/teamAPI";
 
-const TeamSelect = ({ team, selectTeam }) => {
-  const [teamList, setTeamList] = useState([]);
+const TeamSelect = ({ teamList, team, selectTeam }) => {
+  // const [teamList, setTeamList] = useState([]);
 
-  const getAllTeams = async () => {
-    try {
-      const response = await getTeams();
-      if (response.status === 200) {
-        setTeamList(response.data.teams);
-      }
-    } catch (error) {
-      console.log(error.response.data);
-    }
-  };
+  // const getAllTeams = async () => {
+  //   try {
+  //     const response = await getTeams();
+  //     if (response.status === 200) {
+  //       setTeamList(response.data.teams);
+  //     }
+  //   } catch (error) {
+  //     console.log(error.response.data);
+  //   }
+  // };
 
-  useEffect(() => {
-    getAllTeams();
-  }, []);
+  // useEffect(() => {
+  //   getAllTeams();
+  // }, []);
 
   return (
     <div className="col-span-2">
@@ -38,8 +38,8 @@ const TeamSelect = ({ team, selectTeam }) => {
           required
         >
           <option value="">Dropdown</option>
-          {teamList.length !== 0 &&
-            teamList.map((team) => (
+          {teamList?.length !== 0 &&
+            teamList?.map((team) => (
               <option key={team._id} value={team._id}>
                 {team.name}
               </option>
